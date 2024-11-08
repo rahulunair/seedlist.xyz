@@ -205,12 +205,12 @@ async function renderStartupDetails(startup) {
                             
                             <div>
                                 <h3 class="text-lg font-bold mb-1">Technology Stack</h3>
-                                <p class="text-sm">${safeText(startup.techViability) || 'No technical details available.'}</p>
+                                <p class="text-sm">${safeText(startup.technicalApproach) || 'No technical details available.'}</p>
                             </div>
                             
                             <div>
                                 <h3 class="text-lg font-bold mb-1">Market Overview</h3>
-                                <p class="text-sm">${safeText(startup.businessViability) || 'No market details available.'}</p>
+                                <p class="text-sm">${safeText(startup.marketOverview) || 'No market details available.'}</p>
                             </div>
                         </div>
                     </div>
