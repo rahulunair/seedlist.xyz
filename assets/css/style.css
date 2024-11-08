@@ -1,0 +1,67 @@
+:root {
+    --neon-color: rgb(62, 161, 219);
+    --transition-duration: 0.2s;
+}
+
+html {
+    transition: background-color var(--transition-duration) ease-in-out,
+                color var(--transition-duration) ease-in-out;
+}
+
+[data-theme='light'] {
+    --neon-color: rgb(0, 122, 255);
+}
+
+[data-theme='dark'] {
+    --neon-color: rgb(62, 161, 219);
+}
+
+.shadow-neon {
+    box-shadow: 0 0 15px var(--neon-color);
+}
+
+.card {
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out, 
+                background-color var(--transition-duration) ease-in-out,
+                color var(--transition-duration) ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px theme('colors.primary.500');
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-color);
+    border-radius: 4px;
+}
+
+.neon-border {
+    box-shadow: 0 0 5px theme('colors.primary.500'),
+                0 0 10px theme('colors.primary.400'),
+                0 0 15px theme('colors.primary.300');
+    animation: neon-pulse 2s infinite;
+}
+
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 5px theme('colors.primary.500'),
+                    0 0 10px theme('colors.primary.400'),
+                    0 0 15px theme('colors.primary.300');
+    }
+    50% {
+        box-shadow: 0 0 10px theme('colors.primary.500'),
+                    0 0 20px theme('colors.primary.400'),
+                    0 0 30px theme('colors.primary.300');
+    }
+}
